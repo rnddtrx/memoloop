@@ -37,9 +37,8 @@ public class DeckService {
     }
 
     //Read a deck by id
-    public DeckDto getDeckById(Long id) {
-        Deck deck = deckRepository.findById(id).orElseThrow(() -> new RuntimeException("Deck not found"));
-        return deckMapper.toDto(deck);
+    public Deck getDeckById(Long id) {
+        return deckRepository.findById(id).orElseThrow(() -> new RuntimeException("Deck not found"));
     }
 
     //Read detailed deck
